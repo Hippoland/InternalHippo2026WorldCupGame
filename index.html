@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Фирмена игра: Прогнози за Световното</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Вътрешна фирмена игра</p>
+      <h1>Прогнози за Световното</h1>
+      <p>Познай резултатите от елиминациите и събери най-много точки.</p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card intro-card">
+      <h2>Как работи?</h2>
+      <div class="rules-grid">
+        <div><strong>3 т.</strong><span>познат знак</span></div>
+        <div><strong>5 т.</strong><span>точен резултат</span></div>
+        <div><strong>2 т.</strong><span>позната голова разлика</span></div>
+      </div>
+      <p class="muted">Прогнозите се приемат до крайния срок на всеки мач. При елиминации резултатът е за редовното време, освен ако не промените правилото вътрешно.</p>
+    </section>
+
+    <section class="card player-card">
+      <h2>Участник</h2>
+      <label>
+        Име
+        <input id="playerName" type="text" placeholder="примерно Никола Колев" autocomplete="name" />
+      </label>
+      <label>
+        Имейл
+        <input id="playerEmail" type="email" placeholder="примерно nikolakolev@hippoland.net" autocomplete="email" />
+      </label>
+      <p class="muted small">Името и имейлът се пазят локално в браузъра, за да не ги въвеждаш всеки път.</p>
+    </section>
+
+    <section class="card full-width">
+      <div class="section-header">
+        <div>
+          <h2>Отворени мачове</h2>
+          <p class="muted">Попълни резултат за всеки активен мач.</p>
+        </div>
+        <button id="refreshBtn" class="secondary">Обнови</button>
+      </div>
+      <div id="status" class="status">Зареждане...</div>
+      <div id="matches" class="matches"></div>
+    </section>
+
+    <section class="card full-width">
+      <div class="section-header">
+        <div>
+          <h2>Класиране</h2>
+          <p class="muted">Обновява се автоматично на база въведените реални резултати в Google Sheets.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Участник</th>
+              <th>Точки</th>
+              <th>Точни</th>
+              <th>Знак</th>
+              <th>Прогнози</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Powered by GitHub Pages + Google Sheets</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
